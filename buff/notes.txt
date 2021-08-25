@@ -1,0 +1,25 @@
+1. 10.10.10.198   7680   tcp    pando-pub      open   
+10.10.10.198   8080   tcp    http           open   Apache httpd 2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.6
+
+2. 8080 website, gym management, php site, made using gym management software 1.0
+3. admin.cgi, admin.pl access denied
+4. phpinfo.php filenot found
+5. nikto and owasp-zap unresponsive
+6. view-source:http://10.10.10.198:8080/boot/js/forms.js	
+7. https://www.exploit-db.com/exploits/48506
+8. The exploirt mentioned in above url worked, the type command displayed flag locaded in Desktop
+---- Scanning URL: http://10.10.10.198:8080/ ----
++ http://10.10.10.198:8080/admin.cgi (CODE:403|SIZE:1044)                                                                                                                                                                                    
++ http://10.10.10.198:8080/admin.pl (CODE:403|SIZE:1044)                                                                                                                                                                                     
++ http://10.10.10.198:8080/AT-admin.cgi (CODE:403|SIZE:1044)                                                                                                                                                                                 
++ http://10.10.10.198:8080/aux (CODE:403|SIZE:1044)                                                                                                                                                                                          
+==> DIRECTORY: http://10.10.10.198:8080/boot/                                                                                                                                                                                                
++ http://10.10.10.198:8080/cachemgr.cgi (CODE:403|SIZE:1044)                                                                                                                                                                                 
++ http://10.10.10.198:8080/cgi-bin/ (CODE:403|SIZE:1058)                                                                                                                                                                                     
++ http://10.10.10.198:8080/com1 (CODE:403|SIZE:1044)                                                                                                                                                                                         
++ http://10.10.10.198:8080/com2 (CODE:403|SIZE:1044)                                                                                                                                                                                         
++ http://10.10.10.198:8080/com3 (CODE:403|SIZE:1044)                                                                                                                                                                                         
++ http://10.10.10.198:8080/con (CODE:403|SIZE:1044)    
+
+
+https://medium.com/bugbountywriteup/privilege-escalation-in-windows-380bee3a2842
