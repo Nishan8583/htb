@@ -1,0 +1,152 @@
+nishan …/htb/explore on 🌱 master took 3s 
+➜ nmap 10.10.10.247
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2021-09-05 08:02 +0545
+Nmap scan report for 10.10.10.247
+Host is up (0.18s latency).
+Not shown: 990 closed ports
+PORT      STATE    SERVICE
+416/tcp   filtered silverplatter
+700/tcp   filtered epp
+800/tcp   filtered mdbs_daemon
+1061/tcp  filtered kiosk
+1163/tcp  filtered sddp
+2222/tcp  open     EtherNetIP-1
+5100/tcp  filtered admd
+5555/tcp  filtered freeciv
+8192/tcp  filtered sophos
+49165/tcp filtered unknown
+
+Nmap done: 1 IP address (1 host up) scanned in 25.19 seconds
+nishan …/htb/explore on 🌱 master took 25s 
+➜ nmap 10.10.10.247
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2021-09-05 08:03 +0545
+Note: Host seems down. If it is really up, but blocking our ping probes, try -Pn
+Nmap done: 1 IP address (0 hosts up) scanned in 3.06 seconds
+nishan …/htb/explore on 🌱 master took 3s 
+➜ nmap 10.10.10.247
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2021-09-05 08:04 +0545
+Nmap scan report for 10.10.10.247
+Host is up (0.23s latency).
+Not shown: 997 closed ports
+PORT     STATE    SERVICE
+416/tcp  filtered silverplatter
+2222/tcp open     EtherNetIP-1
+5555/tcp filtered freeciv
+
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2021-09-05 08:06 +0545
+Nmap scan report for 10.10.10.247
+Host is up (0.17s latency).
+Not shown: 65531 closed ports
+PORT      STATE    SERVICE VERSION
+2222/tcp  open     ssh     (protocol 2.0)
+| fingerprint-strings: 
+|   NULL: 
+|_    SSH-2.0-SSH Server - Banana Studio
+| ssh-hostkey: 
+|_  2048 71:90:e3:a7:c9:5d:83:66:34:88:3d:eb:b4:c7:88:fb (RSA)
+5555/tcp  filtered freeciv
+32853/tcp open     unknown
+| fingerprint-strings: 
+|   GenericLines: 
+|     HTTP/1.0 400 Bad Request
+|     Date: Sun, 05 Sep 2021 02:58:46 GMT
+|     Content-Length: 22
+|     Content-Type: text/plain; charset=US-ASCII
+|     Connection: Close
+|     Invalid request line:
+|   GetRequest: 
+|     HTTP/1.1 412 Precondition Failed
+|     Date: Sun, 05 Sep 2021 02:58:46 GMT
+|     Content-Length: 0
+|   HTTPOptions: 
+|     HTTP/1.0 501 Not Implemented
+|     Date: Sun, 05 Sep 2021 02:58:52 GMT
+|     Content-Length: 29
+|     Content-Type: text/plain; charset=US-ASCII
+|     Connection: Close
+|     Method not supported: OPTIONS
+|   Help: 
+|     HTTP/1.0 400 Bad Request
+|     Date: Sun, 05 Sep 2021 02:59:08 GMT
+|     Content-Length: 26
+|     Content-Type: text/plain; charset=US-ASCII
+|     Connection: Close
+|     Invalid request line: HELP
+|   Kerberos: 
+|     HTTP/1.0 400 Bad Request
+|     Date: Sun, 05 Sep 2021 02:59:09 GMT
+|     Content-Length: 41
+|     Content-Type: text/plain; charset=US-ASCII
+|     Connection: Close
+|     Invalid request line: 
+|     qj?n0?k?
+|   RTSPRequest: 
+|     HTTP/1.0 400 Bad Request
+|     Date: Sun, 05 Sep 2021 02:58:52 GMT
+|     Content-Length: 39
+|     Content-Type: text/plain; charset=US-ASCII
+|     Connection: Close
+|     valid protocol version: RTSP/1.0
+|   SSLSessionReq: 
+|     HTTP/1.0 400 Bad Request
+|     Date: Sun, 05 Sep 2021 02:59:08 GMT
+|     Content-Length: 73
+|     Content-Type: text/plain; charset=US-ASCII
+|     Connection: Close
+|     Invalid request line: 
+|     ?G???,???`~?
+|     ??{????w????<=?o?
+|   TLSSessionReq: 
+|     HTTP/1.0 400 Bad Request
+|     Date: Sun, 05 Sep 2021 02:59:08 GMT
+|     Content-Length: 71
+|     Content-Type: text/plain; charset=US-ASCII
+|     Connection: Close
+|     Invalid request line: 
+|_    ??random1random2random3random4
+59777/tcp open     http    Bukkit JSONAPI httpd for Minecraft game server 3.6.0 or older
+|_http-title: Site doesn't have a title (text/plain).
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port2222-TCP:V=7.60%I=7%D=9/5%Time=61342F22%P=x86_64-pc-linux-gnu%r(NUL
+SF:L,24,"SSH-2\.0-SSH\x20Server\x20-\x20Banana\x20Studio\r\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port32853-TCP:V=7.60%I=7%D=9/5%Time=61342F22%P=x86_64-pc-linux-gnu%r(Ge
+SF:nericLines,AA,"HTTP/1\.0\x20400\x20Bad\x20Request\r\nDate:\x20Sun,\x200
+SF:5\x20Sep\x202021\x2002:58:46\x20GMT\r\nContent-Length:\x2022\r\nContent
+SF:-Type:\x20text/plain;\x20charset=US-ASCII\r\nConnection:\x20Close\r\n\r
+SF:\nInvalid\x20request\x20line:\x20")%r(GetRequest,5C,"HTTP/1\.1\x20412\x
+SF:20Precondition\x20Failed\r\nDate:\x20Sun,\x2005\x20Sep\x202021\x2002:58
+SF::46\x20GMT\r\nContent-Length:\x200\r\n\r\n")%r(HTTPOptions,B5,"HTTP/1\.
+SF:0\x20501\x20Not\x20Implemented\r\nDate:\x20Sun,\x2005\x20Sep\x202021\x2
+SF:002:58:52\x20GMT\r\nContent-Length:\x2029\r\nContent-Type:\x20text/plai
+SF:n;\x20charset=US-ASCII\r\nConnection:\x20Close\r\n\r\nMethod\x20not\x20
+SF:supported:\x20OPTIONS")%r(RTSPRequest,BB,"HTTP/1\.0\x20400\x20Bad\x20Re
+SF:quest\r\nDate:\x20Sun,\x2005\x20Sep\x202021\x2002:58:52\x20GMT\r\nConte
+SF:nt-Length:\x2039\r\nContent-Type:\x20text/plain;\x20charset=US-ASCII\r\
+SF:nConnection:\x20Close\r\n\r\nNot\x20a\x20valid\x20protocol\x20version:\
+SF:x20\x20RTSP/1\.0")%r(Help,AE,"HTTP/1\.0\x20400\x20Bad\x20Request\r\nDat
+SF:e:\x20Sun,\x2005\x20Sep\x202021\x2002:59:08\x20GMT\r\nContent-Length:\x
+SF:2026\r\nContent-Type:\x20text/plain;\x20charset=US-ASCII\r\nConnection:
+SF:\x20Close\r\n\r\nInvalid\x20request\x20line:\x20HELP")%r(SSLSessionReq,
+SF:DD,"HTTP/1\.0\x20400\x20Bad\x20Request\r\nDate:\x20Sun,\x2005\x20Sep\x2
+SF:02021\x2002:59:08\x20GMT\r\nContent-Length:\x2073\r\nContent-Type:\x20t
+SF:ext/plain;\x20charset=US-ASCII\r\nConnection:\x20Close\r\n\r\nInvalid\x
+SF:20request\x20line:\x20\x16\x03\0\0S\x01\0\0O\x03\0\?G\?\?\?,\?\?\?`~\?\
+SF:0\?\?{\?\?\?\?w\?\?\?\?<=\?o\?\x10n\0\0\(\0\x16\0\x13\0")%r(TLSSessionR
+SF:eq,DB,"HTTP/1\.0\x20400\x20Bad\x20Request\r\nDate:\x20Sun,\x2005\x20Sep
+SF:\x202021\x2002:59:08\x20GMT\r\nContent-Length:\x2071\r\nContent-Type:\x
+SF:20text/plain;\x20charset=US-ASCII\r\nConnection:\x20Close\r\n\r\nInvali
+SF:d\x20request\x20line:\x20\x16\x03\0\0i\x01\0\0e\x03\x03U\x1c\?\?random1
+SF:random2random3random4\0\0\x0c\0/\0")%r(Kerberos,BD,"HTTP/1\.0\x20400\x2
+SF:0Bad\x20Request\r\nDate:\x20Sun,\x2005\x20Sep\x202021\x2002:59:09\x20GM
+SF:T\r\nContent-Length:\x2041\r\nContent-Type:\x20text/plain;\x20charset=U
+SF:S-ASCII\r\nConnection:\x20Close\r\n\r\nInvalid\x20request\x20line:\x20\
+SF:0\0\0qj\?n0\?k\?\x03\x02\x01\x05\?\x03\x02\x01");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 1511.27 seconds
