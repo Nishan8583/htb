@@ -20,3 +20,6 @@
  25 https://github.com/vulnersCom/nmap-vulners
  26 nmap --script nmap-vulners -sV 192.168.1.105 -p 21-80
 
+
+for shifting normal shell to meterpreter
+https://www.yeahhub.com/metasploit-upgrading-normal-command-shell-meterpreter-shell/
