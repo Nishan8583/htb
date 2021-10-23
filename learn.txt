@@ -15,4 +15,8 @@
 &> file redirects stdout and stderr to file
 > file 2>&1 redirects stdout and stderr to file
 
+3 
+ 24 nmap --script vuln -sV 10.10.193.172 -p 445
+ 25 https://github.com/vulnersCom/nmap-vulners
+ 26 nmap --script nmap-vulners -sV 192.168.1.105 -p 21-80
 
