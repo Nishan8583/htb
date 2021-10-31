@@ -23,3 +23,6 @@
 
 for shifting normal shell to meterpreter
 https://www.yeahhub.com/metasploit-upgrading-normal-command-shell-meterpreter-shell/
+
+
+password sometimes * is accepted, u can then loop, ex: if a* is accepted, then a is first character
