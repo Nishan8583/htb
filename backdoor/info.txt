@@ -1,0 +1,132 @@
+➜ ffuf -u http://10.10.11.125/FUZZ -w ~/wordlist/content.txt 
+
+        /'___\  /'___\           /'___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.3.1-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://10.10.11.125/FUZZ
+ :: Wordlist         : FUZZ: /home/nishan/wordlist/content.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200,204,301,302,307,401,403,405
+________________________________________________
+
+.hta                    [Status: 403, Size: 277, Words: 20, Lines: 10, Duration: 415ms]
+.htaccess               [Status: 403, Size: 277, Words: 20, Lines: 10, Duration: 3560ms]
+.htpasswd               [Status: 403, Size: 277, Words: 20, Lines: 10, Duration: 4603ms]
+index.php               [Status: 301, Size: 0, Words: 1, Lines: 1, Duration: 310ms]
+server-status           [Status: 403, Size: 277, Words: 20, Lines: 10, Duration: 318ms]
+wp-admin                [Status: 301, Size: 315, Words: 20, Lines: 10, Duration: 313ms]
+wp-content              [Status: 301, Size: 317, Words: 20, Lines: 10, Duration: 316ms]
+wp-includes             [Status: 301, Size: 318, Words: 20, Lines: 10, Duration: 316ms]
+xmlrpc.php              [Status: 405, Size: 42, Words: 6, Lines: 1, Duration: 312ms]
+:: Progress: [4686/4686] :: Job [1/1] :: 128 req/sec :: Duration: [0:00:39] :: Errors: 0 :
+
+[2021-11-28 15:40:36] [CVE-2017-5487] [http] [medium] http://10.10.11.125/?rest_route=/wp/v2/users/ ["name":"admin"]
+[2021-11-28 15:40:38] [fingerprinthub-web-fingerprints:wordpress] [http] [info] http://10.10.11.125
+[2021-11-28 15:40:38] [apache-detect] [http] [info] http://10.10.11.125 [Apache/2.4.41 (Ubuntu)]
+[2021-11-28 15:40:42] [tech-detect:wordpress] [http] [info] http://10.10.11.125
+[2021-11-28 15:40:42] [tech-detect:google-font-api] [http] [info] http://10.10.11.125
+[2021-11-28 15:40:46] [wordpress-directory-listing] [http] [info] http://10.10.11.125/wp-content/uploads/
+[2021-11-28 15:40:47] [wordpress-directory-listing] [http] [info] http://10.10.11.125/wp-content/plugins/
+[2021-11-28 15:40:48] [wordpress-directory-listing] [http] [info] http://10.10.11.125/wp-includes/
+[2021-11-28 15:40:57] [wordpress-xmlrpc-file] [http] [info] http://10.10.11.125/xmlrpc.php
+[2021-11-28 15:41:03] [host-header-injection] [http] [info] http://10.10.11.125
+[2021-11-28 15:41:15] [http-missing-security-headers:strict-transport-security] [http] [info] http://10.10.11.125
+[2021-11-28 15:41:15] [http-missing-security-headers:x-frame-options] [http] [info] http://10.10.11.125
+[2021-11-28 15:41:15] [http-missing-security-headers:clear-site-data] [http] [info] http://10.10.11.125
+[2021-11-28 15:41:15] [http-missing-security-headers:cross-origin-embedder-policy] [http] [info] http://10.10.11.125
+[2021-11-28 15:41:15] [http-missing-security-headers:cross-origin-opener-policy] [http] [info] http://10.10.11.125
+[2021-11-28 15:41:15] [http-missing-security-headers:x-content-type-options] [http] [info] http://10.10.11.125
+[2021-11-28 15:41:15] [http-missing-security-headers:x-permitted-cross-domain-policies] [http] [info] http://10.10.11.125
+[2021-11-28 15:41:15] [http-missing-security-headers:cross-origin-resource-policy] [http] [info] http://10.10.11.125
+[2021-11-28 15:41:15] [http-missing-security-headers:access-control-allow-credentials] [http] [info] http://10.10.11.125
+[2021-11-28 15:41:15] [http-missing-security-headers:access-control-max-age] [http] [info] http://10.10.11.125
+[2021-11-28 15:41:15] [http-missing-security-headers:content-security-policy] [http] [info] http://10.10.11.125
+[2021-11-28 15:41:15] [http-missing-security-headers:referrer-policy] [http] [info] http://10.10.11.125
+[2021-11-28 15:41:15] [http-missing-security-headers:access-control-allow-origin] [http] [info] http://10.10.11.125
+[2021-11-28 15:41:15] [http-missing-security-headers:access-control-expose-headers] [http] [info] http://10.10.11.125
+[2021-11-28 15:41:15] [http-missing-security-headers:access-control-allow-methods] [http] [info] http://10.10.11.125
+[2021-11-28 15:41:21] [wordpress-login] [http] [info] http://10.10.11.125/wp-login.php
+[2021-11-28 15:41:46] [wp-license-file] [http] [info] http://10.10.11.125/license.txt
+
+
+➜ ffuf -u http://10.10.11.125/?rest_route=/wp/v2/FUZZ -w ~/wordlist/content.txt 
+
+        /'___\  /'___\           /'___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.3.1-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://10.10.11.125/?rest_route=/wp/v2/FUZZ
+ :: Wordlist         : FUZZ: /home/nishan/wordlist/content.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200,204,301,302,307,401,403,405
+________________________________________________
+
+Media                   [Status: 200, Size: 1825, Words: 17, Lines: 1, Duration: 454ms]
+Pages                   [Status: 200, Size: 15416, Words: 683, Lines: 1, Duration: 482ms]
+Search                  [Status: 200, Size: 2354, Words: 8, Lines: 1, Duration: 519ms]
+Themes                  [Status: 401, Size: 111, Words: 8, Lines: 1, Duration: 291ms]
+blocks                  [Status: 200, Size: 2, Words: 1, Lines: 1, Duration: 1130ms]
+categories              [Status: 200, Size: 648, Words: 1, Lines: 1, Duration: 1526ms]
+comments                [Status: 200, Size: 1156, Words: 30, Lines: 1, Duration: 1128ms]
+media                   [Status: 200, Size: 1825, Words: 17, Lines: 1, Duration: 1034ms]
+pages                   [Status: 200, Size: 15416, Words: 683, Lines: 1, Duration: 1101ms]
+plugins                 [Status: 401, Size: 129, Words: 11, Lines: 1, Duration: 971ms]
+posts                   [Status: 200, Size: 1791, Words: 30, Lines: 1, Duration: 988ms]
+search                  [Status: 200, Size: 2354, Words: 8, Lines: 1, Duration: 1447ms]
+settings                [Status: 401, Size: 98, Words: 8, Lines: 1, Duration: 1279ms]
+tags                    [Status: 200, Size: 2, Words: 1, Lines: 1, Duration: 1368ms]
+templates               [Status: 401, Size: 138, Words: 12, Lines: 1, Duration: 1301ms]
+themes                  [Status: 401, Size: 111, Words: 8, Lines: 1, Duration: 1175ms]
+users                   [Status: 200, Size: 607, Words: 1, Lines: 1, Duration: 1024ms]
+
+
+
+/xmlrpc.php?rsd gives the following
+
+<?xml version="1.0" encoding="UTF-8"?><rsd version="1.0" xmlns="http://archipelago.phrasewise.com/rsd">
+	<service>
+		<engineName>WordPress</engineName>
+		<engineLink>https://wordpress.org/</engineLink>
+		<homePageLink>http://10.10.11.125</homePageLink>
+		<apis>
+			<api name="WordPress" blogID="1" preferred="true" apiLink="http://10.10.11.125/xmlrpc.php" />
+			<api name="Movable Type" blogID="1" preferred="false" apiLink="http://10.10.11.125/xmlrpc.php" />
+			<api name="MetaWeblog" blogID="1" preferred="false" apiLink="http://10.10.11.125/xmlrpc.php" />
+			<api name="Blogger" blogID="1" preferred="false" apiLink="http://10.10.11.125/xmlrpc.php" />
+				<api name="WP-API" blogID="1" preferred="false" apiLink="http://10.10.11.125/index.php/wp-json/" />
+			</apis>
+	</service>
+</rsd>
+
+possible_entry_points
+1. admin username brute_force
+2. xmlrpc.php adding files? upload a web shell?
+3. path-traversal
+3. APIS recond /wp/v2/
+4. https://10.10.11.125/wp-includes/ shows a lot of files
+5.http://10.10.11.125/index.php/wp-json/ gives a lot of info 
+
+Status:
+- was trying 2 to get info, getting parse error
+  Reference: https://the-bilal-rizwan.medium.com/wordpress-xmlrpc-php-common-vulnerabilites-how-to-exploit-them-d8d3c8600b32
